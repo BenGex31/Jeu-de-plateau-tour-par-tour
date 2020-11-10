@@ -1,0 +1,314 @@
+body {
+  background: url('https://images3.alphacoders.com/910/thumb-1920-91035.jpg') no-repeat fixed right top;
+  font-family: 'Orbitron', sans-serif;
+  color: #e6ffff;
+}
+
+body p:hover, h2:hover, h3:hover {
+  border: 2px solid #e6ffff;
+}
+
+header {
+  margin-bottom: 2em;
+}
+
+#title {
+  margin-bottom: 1em;
+}
+
+h1 {
+  color: #e6ffff;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-size: 1.3em;
+}
+
+#tronMoto, #samMoto {
+  height: 100px;
+  width: 200px;
+}
+
+@media all and (min-width: 426px) {
+  #samMoto {
+    float: right;
+  }
+  
+  #tronMoto {
+    float: left;
+  }
+}
+
+#new-game {
+  background-color: #04cccc;
+  color: #010101;
+  animation-duration: 5s;
+  font-weight: bolder;
+  margin-top: 1em;
+}
+
+#game {
+  margin: 1em 0em 1em 0em;
+  padding: 1em;
+  height: 550px;
+}
+
+#infoWeapon {
+  margin-bottom: 2em;
+}
+
+#infoPlayer1, #infoPlayer2 {
+  padding-top: 1em;
+  background-color: #010101;
+}
+
+#img-player1, #img-player2 {
+  width: 100px;
+  height: 100px;
+}
+
+h2#player-1 {
+  color: #04cccc;
+}
+
+h2#player-2 {
+  color: #f99f05;
+}
+
+h3 {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  color: #e6ffff;
+  font-size: 1.5em;
+}
+
+h4 {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  color: #04cccc;
+}
+
+h5 {
+  color: #f99f05;
+  padding-top: 1em;
+}
+
+img {
+  margin-bottom: 0.5em;
+}
+
+#img-weapon-p1, #img-weapon-p2 {
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  margin-top: 1em;
+
+}
+
+p {
+  color: #e6ffff;
+  font-weight: bolder;
+}
+
+ul {
+  padding: 0px;
+}
+
+.section2 li {
+  list-style-type: none;
+}
+
+.fas.fa-gamepad {
+  margin-right: 0.3em;
+}
+
+#color-p1, #color-weapon-p1 {
+  color: #04cccc;
+}
+
+#color-p2, #color-weapon-p2 {
+  color: #f99f05;
+}
+
+#Tron-Sword, #Tron-Blaster, #Tron-Mega-Gun, #Tron-Shotgun {
+  background-color: #010101;
+}
+
+footer {
+  margin-top: 2em;
+  padding-top: 1em;
+  background-color: #010101;
+}
+
+footer p {
+  color: #fefefe;
+  font-weight: bolder;
+}
+
+#Jquery {
+  width: 30px;
+  height: 30px;
+}
+
+.fab.fa-bootstrap {
+  margin-left: 8px;
+  color: #609;
+}
+
+.openclassrooms {
+  color: #7451eb;
+}
+
+.fab.fa-linkedin, .linkedin {
+  color: #0E76A8;
+}
+
+.QR-code {
+  width: 100px;
+  height: 100px;
+  border: 1px inset #0E76A8;
+}
+
+.obstacle {
+  background-color: grey !important;
+}
+
+.allowed-player-move {
+  cursor: pointer;
+}
+
+.allowed-player-1-move {
+  background-color: #04cccc !important;
+}
+
+.allowed-player-2-move {
+  background-color: #f99f05 !important;
+}
+
+#grid td {
+  border-collapse: collapse;
+  border: 2px solid whitesmoke;
+  width: 50px !important;
+  height: 50px !important;
+  padding: 0px;
+  margin: 0px;
+}
+
+.player1, .player2 {
+  width: 50px;
+  height: 50px;
+}
+
+.player {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.player1 {
+  background-image: url('../img/player-1.jpg');
+}
+.player2 {
+  background-image: url('../img/player-2.jpg');
+}
+
+.weapon {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.weapon1 {
+  background-image: url('../img/disc-1.png');
+}
+.weapon2 {
+  background-image: url('../img/disc-2.png');
+}
+.weapon3 {
+  background-image: url('../img/weapon-1.jpg');
+}
+.weapon4 {
+  background-image: url('../img/weapon-2.jpg');
+}
+.weapon5 {
+  background-image: url('../img/weapon-3.jpg');
+}
+.weapon6 {
+  background-image: url('../img/weapon-4.jpg');
+}
+
+div.currentPlayer1 {
+  border: 10px ridge #04cccc;
+}
+
+div.currentPlayer2 {
+  border: 10px ridge #f99f05;
+}
+
+.fa-exclamation-triangle {
+  font-size: 5em;
+}
+
+.fightToDeath h1, .fightToDeath h4, .fa-exclamation-triangle {
+  color: red;
+}
+
+.fightToDeath h1 {
+  font-size: 2.5em;
+}
+
+.fightToDeath h4 {
+  font-size: 1.5em;
+}
+
+.attackPlayer1, .attackPlayer2, .defensePlayer1, .defensePlayer2 {
+  margin-top: 1em;
+  border-radius: 5px;
+}
+
+.defensePlayer1, .defensePlayer2 {
+  margin-bottom: 1em;
+  border: 3px ridge lightgreen;
+}
+
+.attackPlayer1, .attackPlayer2 {
+  border: 3px ridge lightcoral;
+}
+
+.DefenseP1, .DefenseP2 {
+  color: lightgreen;
+  font-weight: bolder;
+}
+
+/*Fenêtre modale*/
+
+.modal-header, .modal-footer {
+  background-color: #f99f05;
+}
+
+.modal-title {
+  color: #010101;
+}
+
+.modal-body {
+  background-color: #010101;
+}
+
+.modal-body h1 {
+  color: #04cccc;
+  font-size: 2em;
+}
+
+.modal-body li {
+  margin-left: 1em;
+  font-size: 0.9em;
+}
+
+.modal-body p {
+  font-size: 0.9em;
+}
+
+/*.player-excluded1 {
+  background-color: green;
+}
+
+.player-excluded2 {
+  background-color: red;
+}*/

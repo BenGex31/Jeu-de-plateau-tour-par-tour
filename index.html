@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr" >
+  <head>
+    <meta charset="UTF-8">
+
+    <title>Plateau tour à tour - Etape 3</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="js/Weapon.js" defer></script>
+    <script src="js/Player.js" defer></script>
+    <script src="js/Box.js" defer></script>
+    <script src="js/Grid.js" defer></script>
+    <script src="js/Game.js" defer></script>
+    <script src="https://kit.fontawesome.com/35a79302cd.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <header>
+        <div class="row" id="title">
+          <div class="col-md-5 text-center">
+            <img id="samMoto" src="https://24.media.tumblr.com/tumblr_lvz75uDDHm1r3qz1no1_500.gif" class="img-fluid" alt="SamMoto">
+          </div>
+          <div class="col-md-2 text-center">
+            <h1 class="font-weight-bold text-center animate__animated animate__fadeInDown animate__slower">Welcome to the grid</h1>
+          </div>
+          <div class="col-md-5 text-center">
+            <img id="tronMoto" src="https://i.pinimg.com/originals/b8/45/18/b845180f6ef8cdcfd07d38d878abae2d.gif" class="img-fluid" alt="TronMoto">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <p class="text-center animate__animated animate__flash">Before playing, please read the rules of the game</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#gameRules">
+              Game rules
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="gameRules" tabindex="-1" role="dialog" aria-labelledby="gameRulesTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="gameRulesTitle">Game rules</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body text-left">
+                    <section class="step1">
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <h1>Etape 1 : génération de la carte</h1>
+                          <p>Surla carte du jeu, chaque case est placée aléatoirement et peut être soit :</p>
+                          <ul>
+                            <li>Vide</li><br>
+                            <li>Inaccessible (grisée)</li>
+                          </ul>
+                          <p>Un nombre limité d’armes (4 maximum) est placé aléatoirement et pourra être récolté par les joueurs qui passeraient dessus.</p>
+                          <p>Au moins 4 types d’arme sont créés dans le jeu, avec des dégâts différents. L’arme par défaut qui équipe les joueurs doit infliger 10 points de dégâts. Chaque arme a un nom et un visuel associé.</p>
+                          <p>Le placement des deux joueurs est lui aussi aléatoire sur la carte au chargement de la partie. Ils ne peuvent pas être côte à côte, ainsi qu'en et en bas.</p>
+                        </div>
+                      </div>
+                    </section>
+                    <section class="step2">
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <h1>Etape 2 : les mouvements</h1>
+                          <p>A chaque tour, un joueur peut se déplacer d’une à trois cases (horizontalement ou verticalement) avant de terminer son tour. Il ne peut évidemment pas passer à travers un obstacle.</p>
+                          <p>Si un joueur passe sur une case contenant une arme, il laisse son arme actuelle sur place et la remplace par la nouvelle.</p>
+                        </div>
+                      </div>
+                    </section>
+                    <section class="step3">
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <h1>Etape 3 : le combat !</h1>
+                          <p>Si les joueurs se croisent sur des cases adjacentes (horizontalement ou verticalement), un combat à mort s’engage.</p>
+                          <p>Lors du combat :</p>
+                          <ul>
+                            <li>Chaque joueur attaque à son tour</li><br>
+                            <li>Les dégâts infligés dépendent de l’arme possédée par le joueur</li><br>
+                            <li>Le joueur peut choisir d’attaquer ou de se défendre contre le prochain coup</li><br>
+                            <li>Lorsque le joueur se défend, il encaisse 50% de dégâts en moins qu’en temps normal</li><br>
+                            <li>Dès que les points de vie d’un joueur (initialement à 100) tombent à 0 , celui-ci a perdu. Un message s’affiche et la partie est terminée.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <section class="section2">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h4>Custom weapons available on the grid</h4>
+          </div>
+        </div>
+        <div class="container">
+          <div id="infoWeapon" class="row text-center animate__animated animate__fadeInUp animate__slow"></div>
+        </div>
+      </section>
+      <div class="container">
+        <section class="section1">
+          <div class="row">
+            <div id="infoPlayer1" class="col-lg-2 text-center animate__animated animate__fadeInLeft animate__slow">
+              <h2 class="text-center" id="player-1"><i class="fas fa-gamepad"></i>Player 1</h2><br>
+              <p class="text-center" id="namePlayer1"></p>
+              <p class="text-center" id="color-p1">Color: blue</p>
+              <p class="text-center" id="life-point-p1"></p>
+              <img id="img-player1" class="img-thumbnail img-fluid" alt="Sam Flynn" src="./img/player-1.jpg">
+              <h3>weapon in use :</h3>
+              <p class="text-center" id="color-weapon-p1"><i class="fas fa-compact-disc"></i></p>
+                 <div id="img-weapon-p1" class="">&nbsp;</div><br>
+              <p id="damagePointWeaponP1"></p>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-6 d-flex justify-content-center animate__animated animate__fadeIn animate__slower" id="game">
+              <table id="grid"></table>
+            </div>
+            <div class="col-lg-1"></div>
+            <div id="infoPlayer2" class="col-lg-2 text-center animate__animated animate__fadeInRight animate__slow">
+              <h2 class="text-center" id="player-2"><i class="fas fa-gamepad"></i>Player 2</h2><br>
+              <p class="text-center" id="namePlayer2"></p>
+              <p class="text-center" id="color-p2">Color: Yellow</p>
+              <p class="text-center" id="life-point-p2"></p>
+              <img id="img-player2" class="img-thumbnail img-fluid" alt="Tron" src="./img/player-2.jpg">
+              <h3>weapon in use :</h3>
+              <p class="text-center" id="color-weapon-p2"></p>
+                <div id="img-weapon-p2" class="">&nbsp;</div><br>
+              <p id="damagePointWeaponP2"></p>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <button type="button" class="btn btn-primary animate__bounceIn animate__slower animate__repeat-2" id="new-game">Insert coin for new game</button>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="row text-center justify-content-center align-items-center">
+          <div class="col-md-4">
+            <p><a href="https://jquery.com/">Jquery <img id="Jquery" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp36REVSr1zbbjSoCzQFW67cvfhg2z-x3QLzETxT7Veko6S6FF&s" alt="Jquery"></a></p>
+            <p><a href="https://getbootstrap.com/">Bootstrap<i class="fab fa-bootstrap"></i></a></p>
+          </div>
+          <div class="col-md-4">
+            <p>Formation <a class="openclassrooms" href="https://openclassrooms.com/">OpenClassRooms</a></p>
+            <p><a class="openclassrooms" href="https://openclassrooms.com/fr/paths/60-developpeur-dapplication-frontend">Parcours Développeur FrontEnd</a></p>
+            <p>Projet 6 : Créez un jeu de plateau tour par tour en JS</p>
+          </div>
+          <div class="col-md-4">
+            <p>Benjamin DESOLE  <i class="fab fa-linkedin"></i>  <a class="linkedin" href="https://www.linkedin.com/in/benjamin-desole-333003b9/">LinkedIn</a></p>
+            <img class="QR-code" src="img/frame.png" alt="QR code">
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="js/script.js" defer></script>
+  </body>
+</html>
